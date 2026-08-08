@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { formatUtcAsLocalDisplay } from "../lib/timeUtils";
-import RescheduleForm from "./RescheduleForm";
 import { TutoringSession } from "@/type";
+import RescheduleForm from "./RescheduleForm";
 
 interface SessionCardProps {
   session: TutoringSession;
@@ -16,6 +16,9 @@ export default function SessionCard({
 }: SessionCardProps) {
   const [showForm, setShowForm] = useState(false);
   const [justRequested, setJustRequested] = useState(false);
+
+  const sessionHasAlreadyPassed =
+    new Date(session.datetimeUtc).getTime() <= Date.now();
 
   function handleSuccess() {
     setShowForm(false);
@@ -34,6 +37,8 @@ export default function SessionCard({
 
       {justRequested ? (
         <p className="session-card__confirmation">Reschedule request sent.</p>
+      ) : sessionHasAlreadyPassed ? (
+        <p className="session-card__status">This session has already occurred.</p>
       ) : showForm ? (
         <RescheduleForm
           session={session}

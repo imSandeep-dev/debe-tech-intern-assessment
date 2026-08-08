@@ -5,7 +5,7 @@ export const mockSessions: TutoringSession[] = [
     id: "sess-1",
     subject: "Algebra II",
     teacherName: "Ms. Patel",
-    datetimeUtc: "2026-08-09T10:00:00.000Z",
+    datetimeUtc: "2026-08-07T10:00:00.000Z",
     status: "upcoming",
   },
   {
