@@ -1,0 +1,246 @@
+.sessions-page {
+  min-height: 100vh;
+  padding: 56px 24px;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(91, 195, 169, 0.14) 0%, transparent 26%),
+    radial-gradient(circle at 95% 6%, rgba(63, 143, 180, 0.14) 0%, transparent 30%),
+    linear-gradient(140deg, #eefaf8, #fffaf5);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #123940;
+}
+
+.sessions-page__shell {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.sessions-page__topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.sessions-page__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #bcdedd;
+  color: #227d77;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 24px rgba(30, 91, 94, 0.08);
+}
+
+.sessions-page__badge::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: #37ba8d;
+}
+
+.sessions-page__title {
+  margin: 10px 0 6px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.08em;
+  color: #15373b;
+}
+
+.sessions-page__subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #59777e;
+}
+
+.sessions-page__statusbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.sessions-page__statusbar .icon-button {
+  border: 1px solid #bfd9d6;
+  background: white;
+  border-radius: 14px;
+  padding: 12px;
+  color: #245260;
+  font-weight: 900;
+  box-shadow: 0 5px 14px rgba(38, 85, 95, 0.06);
+}
+
+.sessions-page__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.session-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 26px;
+  border: 1px solid rgba(42, 114, 108, 0.2);
+  background: linear-gradient(180deg, #ffffff 0%, #eefaf8 100%);
+  box-shadow: 0 14px 50px rgba(39, 88, 78, 0.10);
+  overflow: hidden;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.session-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 62px rgba(39, 88, 78, 0.16);
+}
+
+.session-card::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 141, 124, 0.5);
+  right: -78px;
+  top: -76px;
+  background: transparent;
+}
+
+.session-card__details h3 {
+  margin: 0 0 10px;
+  font-size: 26px;
+  line-height: 1.06;
+  color: #173c40;
+}
+
+.session-card__details p {
+  margin: 7px 0;
+  color: #58747a;
+  font-size: 14px;
+}
+
+.session-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #dff8ed;
+  color: #087d55;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.session-card__status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.session-card button,
+.reschedule-form button {
+  border: none;
+  background: linear-gradient(135deg, #1a6d77, #295e56);
+  color: white;
+  padding: 11px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 24px rgba(28, 99, 83, 0.16);
+}
+
+.session-card button:hover,
+.reschedule-form button:hover {
+  background: linear-gradient(135deg, #155460, #1d776e);
+}
+
+.session-card__confirmation {
+  margin-top: 18px;
+  color: #0c8766;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+.reschedule-form {
+  margin-top: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #cce2dc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.reschedule-form__label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #426762;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.reschedule-form__label input,
+.reschedule-form__label select {
+  border-radius: 12px;
+  border: 1px solid #bdcfcc;
+  background: white;
+  padding: 11px 12px;
+  color: #244b51;
+  font: inherit;
+  outline: none;
+}
+
+.reschedule-form__label input:focus,
+.reschedule-form__label select:focus {
+  border-color: #2c9b84;
+  box-shadow: 0 0 0 3px rgba(44, 155, 132, 0.18);
+}
+
+.reschedule-form__error {
+  margin: 2px 0 0;
+  color: #b33838;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.reschedule-form__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reschedule-form__actions button[type="button"] {
+  background: #eef4f2;
+  color: #2b676a;
+  border: 1px solid #bfd4d1;
+  box-shadow: none;
+}
+
+.reschedule-form__actions button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+@media (max-width: 760px) {
+  .sessions-page__topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .sessions-page__list {
+    grid-template-columns: 1fr;
+  }
+}
