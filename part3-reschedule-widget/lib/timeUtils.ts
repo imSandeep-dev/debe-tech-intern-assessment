@@ -32,6 +32,7 @@ function toDatetimeLocalValue(date: Date): string {
 export function localInputValueToUtcIso(localDatetimeValue: string): string {
   const localDate = new Date(localDatetimeValue);
   return localDate.toISOString();
+  // return localDate.toString();
 }
 
 
